@@ -44,7 +44,7 @@ export const initDropdowns = () => {
     // Close dropdown when clicking outside
     document.addEventListener("click", (e) => {
         dropdownMenus.forEach(optionMenu => {
-            if (!optionMenu.contains(target)) {
+            if (!optionMenu.contains(e.target)) {
                 optionMenu.classList.remove("active");
             }
         });
