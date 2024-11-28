@@ -1,12 +1,12 @@
 import './App.css';
+import HeroContainer from  './HeroContainer';
 import Navbar from './navbar';
-import Sidebar from './sidebar';
 
 function App() {
     return (
         <>
             <Navbar />
-            <Sidebar />
+            <HeroContainer />
         </>
     );
 }
