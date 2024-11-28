@@ -1,8 +1,10 @@
 import React from 'react';
 import './index.css'; 
+import { toggleSidebar } from '../utils/sidebar';
 
 function Navbar() {
     return (
+        <>
         <nav className="navbar">
             <div className="logo-container">
                 <img
@@ -16,7 +18,7 @@ function Navbar() {
                     src="https://preview.keenthemes.com/metronic8/demo61/assets/media/logos/demo44.svg"
                     alt="Metronic logo"
                 />
-                <i className="bx bx-menu menu-icon" onClick={() => console.log('Sidebar toggled')}></i>
+                <i className="bx bx-menu menu-icon" onClick={() => toggleSidebar("sidebar")}></i>
             </div>
             <div className="sub-container">
                 <ul className="nav-links">
@@ -56,6 +58,20 @@ function Navbar() {
                 </div>
             </div>
         </nav>
+        {/* Sidebar menu - smaller device */}
+        <div className="sidebar" id="sidebar">
+            <i 
+                className="bx bx-x close-btn" 
+                onClick={() => toggleSidebar("sidebar")} // Close Sidebar on click
+            ></i>
+            <ul>
+                <li>Home</li>
+                <li>Pages</li>
+                <li>Apps</li>
+                <li>Help</li>
+            </ul>
+        </div>
+    </>
     );
 }
 
