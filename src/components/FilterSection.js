@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DropdownSelector from "./DropdownSelector";
 import SearchBar from "./SearchBar";
 import Button from "./Button";
-import "./index.css"; // Style for filter section
-import "./dropdown.css"; // Style for filter section
-// import { setupFeatureInteractions } from "../utils/interactiveFeatures"; // Import the utility function
-
+import { setupFilterItemInteractions } from "../utils/interactiveFilters"; // Import the utility
+import "./index.css";
+import "./dropdown.css";
 
 const FilterSection = () => {
-    // useEffect(() => {
-    //     setupFeatureInteractions(); // Call the utility function to set up interactivity
-    // }, []); // Empty dependency ensures it runs only once after the component mounts
+    useEffect(() => {
+        setupFilterItemInteractions(); // Call the utility to set up interactivity
+    }, []); // Empty dependency ensures this runs only once after mounting
+
     return (
         <div className="filter-section">
             <SearchBar />
