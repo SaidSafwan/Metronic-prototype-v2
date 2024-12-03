@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { initDropdowns } from "../utils/dropdown"; // Import utility
+import { setupFilterItemInteractions } from "../utils/interactiveFilters"; // Import the utility
 import "./dropdown.css"; // Import dropdown styles
 import "./index.css"; 
 
 const DropdownSelector = ({ label, options }) => {
     useEffect(() => {
         initDropdowns(); // Initialize dropdown interactions
+        setupFilterItemInteractions(); // Call the utility to set up interactivity
     }, []);
 
     return (
