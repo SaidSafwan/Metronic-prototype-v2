@@ -8,14 +8,14 @@ export const setupFeatureInteractions = () => {
         });
     });
 
-    const filterItems = document.querySelectorAll(
-        ".filter-section .search-bar, .filter-section .select-menu .select-btn"
-    );
+    // const filterItems = document.querySelectorAll(
+    //     ".filter-section .search-bar, .filter-section .select-menu .select-btn"
+    // );
 
-    filterItems.forEach((item) => {
-        item.addEventListener("click", () => {
-            filterItems.forEach((el) => el.classList.remove("clicked"));
-            item.classList.add("clicked");
-        });
-    });
+    // filterItems.forEach((item) => {
+    //     item.addEventListener("click", () => {
+    //         filterItems.forEach((el) => el.classList.remove("clicked"));
+    //         item.classList.add("clicked");
+    //     });
+    // });
 };
