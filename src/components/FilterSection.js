@@ -1,19 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import DropdownSelector from "./DropdownSelector";
 import SearchBar from "./SearchBar";
 import Button from "./Button";
-import { setupFilterItemInteractions } from "../utils/interactiveFilters"; // Import the utility
+// import { setupFilterItemInteractions } from "../utils/interactiveFilters"; // Import the utility
 import "./index.css";
 import "./dropdown.css";
 
 const FilterSection = () => {
-    useEffect(() => {
-        setupFilterItemInteractions(); // Call the utility to set up interactivity
-    }, []); // Empty dependency ensures this runs only once after mounting
+    const handleClick = () => {
+        // setupFilterItemInteractions(); // Reapply interactions dynamically on each click
+    };
 
     return (
-        <div className="filter-section">
-            <SearchBar />
+        <div className="filter-section" onClick={handleClick}>
+            <SearchBar className="search-bar" />
             <DropdownSelector 
                 label="Apartment"
                 options={["All", "Apartment", "Condos", "Townhouse", "Commercial"]}
@@ -29,7 +29,7 @@ const FilterSection = () => {
             <Button className="filter-btn">
                 <img src="./assets/icons/horizontal-adjust.svg" alt="adjust icon" style={{ width: "30px" }} />
             </Button>
-            <Button className="search-btn">Search</Button>
+            <Button className="filter-btn">Search</Button>
         </div>
     );
 };
