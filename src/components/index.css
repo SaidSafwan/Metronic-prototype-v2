@@ -307,10 +307,15 @@ body {
 
 /* Apply new background color to clicked items */
 .filter-section .clicked {
-    background-color: #afafaf34; /* Your desired color */
+    background-color: greenyellow; /* Your desired color */
     /* border-color: #ccc; Optional border style */
     /* transition: background-color 0.3s; Smooth transition */
 }
+
+/* .dropdown .clicked {
+    background-color: greenyellow;
+    border-radius: 8px;
+} */
 
 /* Style the dropdown select element */
 .filter-section .dropdown-items {
