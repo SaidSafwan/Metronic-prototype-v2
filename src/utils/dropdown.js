@@ -1,52 +1,58 @@
-// utils/dropdown.js
-
 export const initDropdowns = () => {
     // Select all dropdown menus
     const dropdownMenus = document.querySelectorAll(".select-menu");
 
-    // Loop through each dropdown menu
-    dropdownMenus.forEach(optionMenu => {
+    dropdownMenus.forEach((optionMenu) => {
         const selectBtn = optionMenu.querySelector(".select-btn");
         const options = optionMenu.querySelectorAll(".option");
         const sBtn_text = optionMenu.querySelector(".sBtn-text");
 
-        // Toggle dropdown on button click
-        selectBtn.addEventListener("click", () => {
-            // Close other dropdowns if they are open
-            dropdownMenus.forEach(menu => {
-                if (menu !== optionMenu) {
-                    menu.classList.remove("active");
-                }
+        // Ensure no duplicate event listeners
+        selectBtn.removeEventListener("click", toggleDropdown);
+        options.forEach((option) =>
+            option.removeEventListener("click", handleOptionClick)
+        );
+
+        // Add event listener for dropdown toggle
+        selectBtn.addEventListener("click", toggleDropdown);
+
+        // Add event listeners for option clicks
+        options.forEach((option) => {
+            option.addEventListener("click", handleOptionClick);
+        });
+
+        // Define the toggleDropdown function
+        function toggleDropdown(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            // Close other dropdowns
+            dropdownMenus.forEach((menu) => {
+                if (menu !== optionMenu) menu.classList.remove("active");
             });
-            // Toggle the current dropdown
+            // Toggle this dropdown
             optionMenu.classList.toggle("active");
-        });
+        }
 
-        // Add click event to each option
-        options.forEach(option => {
-            option.addEventListener("click", () => {
-                // Remove 'selected' class from all options in this dropdown
-                options.forEach(opt => opt.classList.remove("selected"));
+        // Define the handleOptionClick function
+        function handleOptionClick(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            console.log("Option clicked:", this.innerText);
 
-                // Add 'selected' class to the clicked option
-                option.classList.add("selected");
+            // Remove 'selected' from other options
+            options.forEach((opt) => opt.classList.remove("selected"));
 
-                // Update the select button text
-                let selectedOption = option.querySelector(".option-text").innerText;
-                sBtn_text.innerText = selectedOption;
+            // Add 'selected' to clicked option
+            this.classList.add("selected");
 
-                // Close the dropdown
-                optionMenu.classList.remove("active");
-            });
-        });
+            // Update the dropdown button text
+            sBtn_text.innerText = this.querySelector(".option-text").innerText;
+
+            // Close the dropdown
+            optionMenu.classList.remove("active");  
+        }
     });
 
-    // Close dropdown when clicking outside
-    document.addEventListener("click", (e) => {
-        dropdownMenus.forEach(optionMenu => {
-            if (!optionMenu.contains(e.target)) {
-                optionMenu.classList.remove("active");
-            }
-        });
+    // Close dropdowns on document click
+    document.addEventListener("click", () => {
+        dropdownMenus.forEach((menu) => menu.classList.remove("active"));
     });
 };
