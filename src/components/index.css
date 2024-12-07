@@ -672,10 +672,11 @@ body {
       font-size: 0.8rem;
       font-family: "Inter", Arial, Helvetica, sans-serif;
       /* background-color: red; */
-}
-.right-foot ul{
-    /* padding: 0;
-    margin: 0; */
+    }
+    .right-foot ul{
+        /* padding: 0;
+        margin: 0; */
+    list-style: none;
     display: flex;
     background-color: #fff;
     width: 100%;
