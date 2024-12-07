@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './Footer';
 import HeroContainer from  './HeroContainer';
 import Navbar from './navbar';
 import SearchResultsContainer from './SearchResultsContainer';
@@ -10,6 +11,7 @@ function App() {
             <Navbar />
             <HeroContainer />
             <SearchResultsContainer />
+            <Footer/>
         </>
     );
 }
