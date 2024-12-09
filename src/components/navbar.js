@@ -8,10 +8,10 @@ function Navbar() {
         <nav className="navbar">
             <div className="logo-container">
                 <img
-                    className="menu-btn"
+                    className="menu-button"
                     src="./assets/icons/dots-menu.svg"
                     alt="menu logo"
-                    style={{ width: "15px" }}
+                    style={{ width: "21px" }}
                 />
                 <img
                     className="brand"
@@ -29,18 +29,18 @@ function Navbar() {
                 </ul>
                 <div className="right-container">
                     <img
-                        className="icons border1"
+                        className="nav-icon border1"
                         src="./assets/icons/notification-icon.svg"
                         alt="Notification Icon"
-                        style={{ width: "24px" }}
+                        style={{ width: "33px" }}
                     />
                     <img
-                        className="icons border2"
+                        className="nav-icon border2"
                         src="./assets/icons/message-icon.svg"
                         alt="Message Icon"
                     />
                     <img
-                        className="icons border3"
+                        className="nav-icon border3"
                         src="./assets/icons/menu-icon.svg"
                         alt="Menu Icon"
                     />
