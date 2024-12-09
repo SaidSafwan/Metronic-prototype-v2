@@ -1,7 +1,7 @@
 import React from "react";
 import DropdownSelector from "./DropdownSelector";
 import SearchBar from "./SearchBar";
-import Button from "./Button";
+// import Button from "./Button";
 // import { setupFilterItemInteractions } from "../utils/interactiveFilters"; // Import the utility
 import "./index.css";
 import "./dropdown.css";
@@ -26,10 +26,10 @@ const FilterSection = () => {
                 label="2 beds"
                 options={["All", "1 beds", "2 beds", "3 beds", "4 beds", "5 beds"]}
             />
-            <Button className="filter-btn">
+            <button className="filter-btn">
                 <img src="./assets/icons/horizontal-adjust.svg" alt="adjust icon" style={{ width: "30px" }} />
-            </Button>
-            <Button className="filter-btn">Search</Button>
+            </button>
+            <button class="search-btn">Search</button>
         </div>
     );
 };
