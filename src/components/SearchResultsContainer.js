@@ -83,7 +83,7 @@ function SearchResultsContainer() {
                     <div className="record">
                         <div className="results">
                             <p>
-                                Showing <b style={{ color: "#252f4a" }}>{cardData.length}</b> search results
+                                Showing <b style={{ color: "#252f4a" }}>64</b> search results
                             </p>
                         </div>
                         <div className="filter-area">
