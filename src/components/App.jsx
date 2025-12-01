@@ -5,6 +5,7 @@ import Navbar from './navbar';
 import SearchResultsContainer from './SearchResultsContainer';
 
 
+
 function App() {
     return (
         <>
